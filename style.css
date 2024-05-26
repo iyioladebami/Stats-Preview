@@ -1,0 +1,111 @@
+/*Remember to set box-sizing to border box for all elements and pseudoelements*/
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+/*Set the margin and padding of your body to zero so that it fills up the screen*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/*Make your section fill the screen's height and also occupy 100% of the width
+Remember to set the appropriate background-color and set display to flex and align-items and justify-content to center*/
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(233, 47%, 7%);
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+/*Set your .img element's background to the appropriate value also set flexgrow to 1 and set a min and max-width which will
+be the same as the .text element*/
+div.img{
+  background: url(image-header-desktop.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  min-width: 450px;
+  max-width: 450px;
+  min-height: 350px;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  border-top-right-radius: .4em;
+  border-bottom-right-radius: .4em;
+}
+div.img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: hsl(274, 93%, 36%);
+    opacity: 0.4;
+    z-index: 2;
+}
+.text{
+    flex-grow: 1;
+    max-width: 450px;
+    min-height: 350px;
+    height: 100%;
+    background:hsl(244, 38%, 16%);
+    padding: 1em;
+    justify-content: center;
+    border-top-left-radius: .4em;
+    border-bottom-left-radius: .4em;
+    
+}
+.text h1{
+    color: hsl(0, 0%, 100%);
+    font-size: 2em;
+    text-align: left;
+    width: 350px;
+}
+.text h1 span{
+    color: hsl(277, 64%, 61%);
+}
+.text p{
+    color: hsla(0, 0%, 100%, 0.75);
+}
+div.stats{
+    display: flex;
+    justify-content: space-between;
+}
+div.stats span{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.3em;
+    color: hsl(0, 0%, 100%);
+}
+.num{
+    font-size: 1.5em;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+@media(max-width:900px)
+{
+    section{
+        height: 100%;
+        padding-top:1em;
+        padding-bottom: 1em;
+    }
+    main{
+        flex-direction: column-reverse;
+    }
+    div.img{background: url(image-header-mobile.jpg);
+        background-size: contain;
+        min-height: 330px;
+        border-bottom-left-radius: .4em;
+        border-top-right-radius: 0;
+    }
+    .text{
+        border-top-right-radius: .4em;
+        border-bottom-left-radius: 0;
+    }
+}
